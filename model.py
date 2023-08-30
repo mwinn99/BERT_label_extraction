@@ -11,8 +11,8 @@ from transformers import AutoTokenizer, AutoModelForMaskedLM
 
 device = 'cuda' if cuda.is_available() else 'cpu' 
 
-X_df = pd.read_csv("/data/X_train.csv")
-Y_df = pd.read_csv("/data/Y_train.csv")
+X_df = pd.read_csv("data/X_train.csv")
+Y_df = pd.read_csv("data/Y_train.csv")
 X_df['list'] = Y_df[Y_df.columns[0:]].values.tolist()
 df = X_df[['text', 'list']].copy()
 
